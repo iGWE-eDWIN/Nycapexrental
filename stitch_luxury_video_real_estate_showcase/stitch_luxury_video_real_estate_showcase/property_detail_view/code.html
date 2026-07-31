@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ESTATE | Exclusive Listing Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#091d2e",
+                    "surface-variant": "#e2e2e2",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#e5e2e1",
+                    "outline": "#747878",
+                    "secondary-fixed-dim": "#e9c176",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#000000",
+                    "secondary": "#775a19",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-dim": "#dadada",
+                    "inverse-surface": "#2f3131",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fed488",
+                    "on-background": "#1a1c1c",
+                    "inverse-primary": "#c8c6c5",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#5f5e5e",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "tertiary-container": "#091d2e",
+                    "soft-gray": "#E5E5E5",
+                    "primary-container": "#1c1b1b",
+                    "charcoal": "#1A1A1A",
+                    "tertiary-fixed": "#d1e4fb",
+                    "surface": "#f9f9f9",
+                    "on-surface-variant": "#444748",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#785a1a",
+                    "champagne-gold": "#C5A059",
+                    "surface-container-low": "#f3f3f3",
+                    "on-tertiary-container": "#73869a",
+                    "ivory-white": "#FFFFFF",
+                    "tertiary-fixed-dim": "#b5c8df",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary-fixed": "#261900",
+                    "tertiary": "#000000",
+                    "surface-container": "#eeeeee",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-tertiary-fixed-variant": "#36485b",
+                    "on-primary-container": "#858383",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c4c7c7",
+                    "background": "#f9f9f9",
+                    "slate-navy": "#2C3E50"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-lg": "80px",
+                    "gutter": "32px",
+                    "stack-sm": "16px",
+                    "stack-md": "32px",
+                    "container-max": "1440px",
+                    "margin-tablet": "32px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "button": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-champagne-gold selection:text-white overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<span class="font-display-lg-mobile text-headline-md font-bold tracking-tighter text-primary">ESTATE</span>
+</div>
+<nav class="hidden md:flex gap-gutter">
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-primary font-bold transition-opacity hover:opacity-70" href="#">Curated Listings</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-opacity hover:opacity-70" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-opacity hover:opacity-70" href="#">Market Insights</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto">
+<!-- Hero Video Section -->
+<section class="relative w-full aspect-video md:h-[707px] overflow-hidden bg-black">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-80 scale-105 transition-transform duration-[20000ms] hover:scale-100" data-alt="A cinematic, slow-panning shot of a brutalist concrete villa set against a foggy coastline at dawn. The atmosphere is quiet and prestigious, using a minimalist color palette of cool grays and deep shadows. The architectural lines are sharp and intentional, reflecting a high-end luxury lifestyle. The lighting is soft, diffused ambient light that highlights the texture of the raw concrete and large glass panes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADhReJ-_dKxD40d1Wd2hNvoE1S_YXul5ONi1-CWNADMG4M-NH2WC5US2FGZES3BasjDspjfj6Lzxid67QbrKXVZCj2trz3VNawwToRMERJ_3J0WfCCMSBNQwxqiL-eKSr6zcghQiUWuxFp0F47uAuLxGwDvD2oYRnA0CMRw_VvMbWkryOPDKpDbsFpvZTrvFeukgwDWVh4kLcy0MvOG6jyGhtlNn4KWniRDGU5FWOfP5dMUcU_DzUx')"></div>
+</div>
+<!-- Video UI Controls -->
+<div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+<button class="pointer-events-auto w-24 h-24 rounded-full glass-panel flex items-center justify-center transition-transform hover:scale-110 active:scale-95 group shadow-2xl">
+<span class="material-symbols-outlined text-charcoal text-4xl translate-x-1" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Bottom Gradient Overlay -->
+<div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-margin-mobile md:bottom-margin-desktop left-margin-mobile md:left-margin-desktop z-20 text-ivory-white">
+<p class="font-label-caps text-label-caps uppercase tracking-[0.2em] mb-2 opacity-80">Exclusive Representation</p>
+<h1 class="font-display-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg max-w-3xl leading-tight">THE CONCRETE MONOLITH, MALIBU</h1>
+</div>
+</section>
+<!-- Property Summary -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-md bg-ivory-white flex flex-col md:flex-row justify-between items-start gap-stack-md">
+<div class="flex-1 space-y-4">
+<div class="flex flex-wrap gap-gutter">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Price</span>
+<span class="font-display-lg-mobile text-headline-lg text-primary">$18,500,000</span>
+</div>
+<div class="w-px h-12 bg-outline-variant hidden md:block"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Bedrooms</span>
+<span class="font-headline-md text-headline-md text-primary">06</span>
+</div>
+<div class="w-px h-12 bg-outline-variant hidden md:block"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Bathrooms</span>
+<span class="font-headline-md text-headline-md text-primary">08</span>
+</div>
+<div class="w-px h-12 bg-outline-variant hidden md:block"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Sq Ft</span>
+<span class="font-headline-md text-headline-md text-primary">12,400</span>
+</div>
+</div>
+<div class="pt-4 border-t border-soft-gray">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Location</p>
+<p class="font-body-lg text-body-lg text-primary">24800 Pacific Coast Highway, Malibu, CA 90265</p>
+</div>
+</div>
+<div class="w-full md:w-auto flex flex-col gap-unit">
+<button class="bg-charcoal text-ivory-white font-button text-button px-stack-md py-4 transition-all hover:opacity-90 active:scale-95 uppercase tracking-[0.1em] w-full md:min-w-[280px]">
+                    Schedule Private Showing
+                </button>
+<button class="border border-charcoal text-charcoal font-button text-button px-stack-md py-4 transition-all hover:bg-charcoal hover:text-ivory-white active:scale-95 uppercase tracking-[0.1em] w-full md:min-w-[280px]">
+                    Download Dossier
+                </button>
+</div>
+</section>
+<!-- Description Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row gap-stack-lg">
+<div class="md:w-1/3">
+<h2 class="font-display-lg-mobile text-headline-lg text-primary leading-tight sticky top-32">Architectural <br/>Stillness.</h2>
+</div>
+<div class="md:w-2/3 space-y-stack-sm">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Designed by renowned architect Koji Tanaka, this estate represents a masterclass in Brutalist minimalism. Every surface is an intentional dialogue between raw cast concrete and the expansive horizon of the Pacific Ocean. The structure is carved into the hillside, ensuring total privacy while maintaining a seamless connection with the natural landscape.
+                </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    The interior is defined by twenty-foot ceilings and floor-to-ceiling glass panels that disappear into the walls, transforming the living spaces into open-air pavilions. Hand-selected travertine floors and blackened steel accents provide a subtle tonal contrast to the warm, morning light that floods the gallery-inspired hallways.
+                </p>
+<div class="grid grid-cols-2 gap-stack-md pt-stack-sm">
+<ul class="space-y-unit font-body-md text-body-md text-primary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> Olympic-size Infinity Pool</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> Subterranean Wine Cellar</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> Custom Italian Kitchen</li>
+</ul>
+<ul class="space-y-unit font-body-md text-body-md text-primary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> 4-Car Gallery Garage</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> State-of-the-Art Wellness Center</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> Smart Home Integration</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Gallery Section (Bento Style) -->
+<section class="px-margin-mobile md:px-margin-desktop pb-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 grid-rows-none md:grid-rows-2 gap-unit h-auto md:h-[1000px]">
+<div class="md:col-span-8 md:row-span-2 group overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An expansive living room in a luxury Malibu home. The floor is made of large ivory-white travertine tiles, and the walls are raw, textured concrete. A giant floor-to-ceiling window reveals a panoramic view of the Pacific Ocean under a soft evening sky. Modern, low-profile black leather furniture is arranged symmetrically, creating a sense of museum-like stillness and order." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATL4sgAEnznZzh3uuAfn9-vVhduCH9ybdQ-uFbIHHK9o7n_sl2_lKmschKJ4G4EcVq7z6k3HTAC3eTK3gmw1n5LZIj_9ZS_QILvVNB94XnpDWQJ396j_Xm8le6X_OAaVKxU-m7-aqXjaehKtGe8gbck0NgkWnfM2kTsHrrmF3bq7PFS3w5ILTIVne6Zm0xLlv1UIALlOXB7a0sVi6kmC6c5XGXLgTZYL02IbiH_jfJopwY7ZtrgU-L"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="md:col-span-4 md:row-span-1 group overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist master bedroom featuring a floating bed with pure white linens. The room opens directly onto a private terrace with a frameless glass railing overlooking the sea. Soft morning sunlight streams into the room, creating long, geometric shadows on the concrete floor. The aesthetic is extremely high-end, clean, and prestigious, utilizing a monochromatic gray and white palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSIK72tGSdPyeuYEax-uI6ZEaUpXhEEZC8IJET72VpgD6zatrotWReAaOEGjNJiJixLQ7BrxfPn8TYtRCFeisC5l_LXLqj7iweL1ks-1egCUj5LyPfTSkTjuxHjnbJE0aqnUfV4IHdeYXtNe3b6jcK2Pno4zRsVspYlCnv5fw2gXLzrCFZBhIAh646UWH82FFLet52fEKpJzvUJKGep5ORcp07wX9maCAJfQ8vV2kmUbpxVTHHS25S"/>
+</div>
+<div class="md:col-span-2 md:row-span-1 group overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A detail shot of a custom-designed kitchen island made from a single slab of honed black marble. In the background, a row of minimalist white cabinetry hides all appliances. The lighting is focused and warm, highlighting the natural veins in the marble. The vibe is sophisticated, architectural, and expertly curated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeYZE4_J2BznEpYPCfU3XEIe_Fuso4q0DbbUDOHJX2oq43RZCnwCm8_ei78X1lUOzF0edDOT0u8eSIAYC6WkCxNJxX_D-9lk0016CgFMYXugn-hCZRvAoG6wxOUclNWmya5VROK0LCD139uAj_oCw536WfdntJstAAz6jbXMVKPpDB2pBKJKmfUAo-9IpHIxggunYwJOzrDzVZjB_LVtdIed7bav2j45AVfTUMgvT29Gu07mqrPB7R"/>
+</div>
+<div class="md:col-span-2 md:row-span-1 group overflow-hidden relative">
+<div class="absolute inset-0 flex items-center justify-center z-10 text-ivory-white text-center p-4">
+<p class="font-label-caps text-label-caps uppercase tracking-widest bg-black/40 px-4 py-2 backdrop-blur-md">+24 Photos</p>
+</div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An outdoor infinity pool reflecting the golden hour sun. The pool’s edge seems to merge perfectly with the horizon of the ocean. Minimalist lounge chairs sit on a polished concrete deck nearby. The lighting is dramatic, warm, and luxurious, capturing a peak moment of peace at a high-end estate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgt7HOEPpoq4yIiHrjsPrAfDhVL6D_-GAjQJfckXYv59nOhrbhQ3lqkUUhlTiyuvVjZ0km5YqWWDBqrKpi0Uc6uk7PPxl21x9rUep70sNRC0jVBjZ5ZluG5okciDI_gQVntMsIXzc0926L8vzYjH01ARHF2wLwTSc58m1GPClJ0j2WmbWQsHeBLIMDydov-UF_7wlvkMY88SWGB6WsutGqcG_ZAm2FTlSjlg08_R6cjnkwrSUmfpsk"/>
+</div>
+</div>
+</section>
+<!-- Contact Agent Section -->
+<section class="mx-margin-mobile md:mx-margin-desktop mb-stack-lg p-stack-md md:p-stack-lg bg-surface-container-highest border border-outline-variant flex flex-col md:flex-row gap-stack-md">
+<div class="md:w-1/2">
+<h3 class="font-display-lg-mobile text-headline-md text-primary mb-4">Request Information</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-gutter max-w-md">
+                    Our Private Office associates are available for confidential inquiries and private property tours. Please provide your contact details and a preferred time for a callback.
+                </p>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full overflow-hidden grayscale">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a high-end real estate agent in a sharp, minimalist black suit. The lighting is soft and studio-quality against a neutral gray background. The agent looks confident, expert, and approachable, embodying the prestigious and understated brand identity of the luxury real estate office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa_oygAjcfgt_bWfU-gx2ci75Zp2zBlUyQKohoe8FYCMlRfnTqzh-qz3a4sFt6PTmfdhEEjs9L_HBzulemFYF1vUZ3iyFtFfUaDrHgacneLWL1h0-KheLDOB6FbSac3ELClGgQsXvb27ZbBo_yj_gldKtCOBjvHYXt8CL0J_PLHERO3MHP3ektfOlX6Hd1wHnuOZ6alYWfk3qPJa94MBuD1TlIQtgv_8bx6fY8dVBQA5tkHQ_NdZRW"/>
+</div>
+<div>
+<p class="font-body-md font-bold text-primary">Julian Vane</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Senior Director, Private Office</p>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<form class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<input class="w-full bg-transparent border-b border-outline py-3 focus:outline-none focus:border-primary transition-colors font-body-md" placeholder="Full Name" type="text"/>
+<input class="w-full bg-transparent border-b border-outline py-3 focus:outline-none focus:border-primary transition-colors font-body-md" placeholder="Email Address" type="email"/>
+</div>
+<input class="w-full bg-transparent border-b border-outline py-3 focus:outline-none focus:border-primary transition-colors font-body-md" placeholder="Phone Number" type="tel"/>
+<textarea class="w-full bg-transparent border-b border-outline py-3 focus:outline-none focus:border-primary transition-colors font-body-md resize-none" placeholder="Message or specific interest..." rows="4"></textarea>
+<button class="w-full bg-champagne-gold text-primary font-button text-button px-stack-md py-4 transition-all hover:brightness-110 active:scale-[0.98] uppercase tracking-[0.15em] font-bold mt-4" type="submit">
+                        Inquire Now
+                    </button>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant text-center mt-4">By submitting, you agree to our privacy policy and terms of service.</p>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-md px-margin-mobile md:px-margin-desktop flex flex-col items-center gap-unit text-center bg-surface-container-highest border-t border-outline-variant">
+<span class="font-display-lg text-headline-md text-primary">ESTATE</span>
+<div class="flex flex-wrap justify-center gap-gutter my-stack-sm">
+<a class="font-body-sm text-body-sm tracking-wide text-on-surface-variant hover:text-primary transition-colors" href="#">The Collection</a>
+<a class="font-body-sm text-body-sm tracking-wide text-on-surface-variant hover:text-primary transition-colors" href="#">Architectural Quiet</a>
+<a class="font-body-sm text-body-sm tracking-wide text-on-surface-variant hover:text-primary transition-colors" href="#">Private Office</a>
+<a class="font-body-sm text-body-sm tracking-wide text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+<p class="font-body-sm text-body-sm tracking-wide text-on-surface-variant opacity-60">© 2024 ESTATE LUXURY VIDEO LISTINGS. ALL RIGHTS RESERVED.</p>
+</footer>
+<script>
+        // Micro-interactions and scroll effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Apply fade-in animation to sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+
+        // Form handling (UI only)
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Request Sent';
+            btn.classList.replace('bg-champagne-gold', 'bg-primary');
+            btn.classList.add('text-ivory-white');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.replace('bg-primary', 'bg-champagne-gold');
+                btn.classList.remove('text-ivory-white');
+                form.reset();
+            }, 3000);
+        });
+    </script>
+</body></html>

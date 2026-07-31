@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add New Property | ESTATE Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #000000 !important;
+            ring: 0 !important;
+        }
+        .drag-over {
+            background-color: #eeeeee;
+            border-color: #000000 !important;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#091d2e",
+                      "surface-variant": "#e2e2e2",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#e5e2e1",
+                      "outline": "#747878",
+                      "secondary-fixed-dim": "#e9c176",
+                      "on-surface": "#1a1c1c",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#000000",
+                      "secondary": "#775a19",
+                      "on-primary-fixed-variant": "#474746",
+                      "surface-dim": "#dadada",
+                      "inverse-surface": "#2f3131",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#fed488",
+                      "on-background": "#1a1c1c",
+                      "inverse-primary": "#c8c6c5",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-error-container": "#93000a",
+                      "surface-tint": "#5f5e5e",
+                      "secondary-fixed": "#ffdea5",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "tertiary-container": "#091d2e",
+                      "soft-gray": "#E5E5E5",
+                      "primary-container": "#1c1b1b",
+                      "charcoal": "#1A1A1A",
+                      "tertiary-fixed": "#d1e4fb",
+                      "surface": "#f9f9f9",
+                      "on-surface-variant": "#444748",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#785a1a",
+                      "champagne-gold": "#C5A059",
+                      "surface-container-low": "#f3f3f3",
+                      "on-tertiary-container": "#73869a",
+                      "ivory-white": "#FFFFFF",
+                      "tertiary-fixed-dim": "#b5c8df",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-bright": "#f9f9f9",
+                      "on-secondary-fixed": "#261900",
+                      "tertiary": "#000000",
+                      "surface-container": "#eeeeee",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-tertiary-fixed-variant": "#36485b",
+                      "on-primary-container": "#858383",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#c4c7c7",
+                      "background": "#f9f9f9",
+                      "slate-navy": "#2C3E50"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "80px",
+                      "gutter": "32px",
+                      "stack-sm": "16px",
+                      "stack-md": "32px",
+                      "container-max": "1440px",
+                      "margin-tablet": "32px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "body-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Playfair Display"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "display-lg-mobile": ["Playfair Display"],
+                      "button": ["Inter"],
+                      "headline-md": ["Playfair Display"],
+                      "label-caps": ["Inter"],
+                      "headline-lg": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-champagne-gold/30">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-display-lg-mobile text-headline-md font-bold tracking-tighter text-primary">ESTATE</h1>
+</div>
+<div class="flex items-center gap-6">
+<span class="hidden md:block font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Admin Portal</span>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-md">
+<!-- Page Header -->
+<div class="mb-stack-md">
+<nav class="flex items-center gap-2 mb-unit">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Listings</span>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="font-label-caps text-label-caps text-primary font-bold uppercase">Add New Property</span>
+</nav>
+<h2 class="font-display-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-headline-lg text-primary">Create Listing</h2>
+</div>
+<form class="grid grid-cols-1 lg:grid-cols-12 gap-gutter" id="propertyForm">
+<!-- Left Column: Details -->
+<div class="lg:col-span-7 space-y-stack-md">
+<!-- General Information Section -->
+<section class="bg-white p-8 border border-outline-variant rounded-DEFAULT">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-6 border-b border-soft-gray pb-2">Property Details</h3>
+<div class="space-y-6">
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2" for="property_title">Property Title</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant py-3 px-4 font-body-md focus:border-primary transition-all" id="property_title" placeholder="e.g. The Obsidian Villa" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2" for="price">Price (USD)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span>
+<input class="w-full bg-surface-container-low border-b border-outline-variant py-3 pl-8 pr-4 font-body-md focus:border-primary transition-all" id="price" placeholder="4,500,000" type="number"/>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2" for="location">Location</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant py-3 px-4 font-body-md focus:border-primary transition-all" id="location" placeholder="Beverly Hills, CA" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2" for="bedrooms">Bedrooms</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant py-3 px-4 font-body-md focus:border-primary transition-all" id="bedrooms" placeholder="5" type="number"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2" for="bathrooms">Bathrooms</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant py-3 px-4 font-body-md focus:border-primary transition-all" id="bathrooms" placeholder="6" type="number"/>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2" for="description">Description</label>
+<textarea class="w-full bg-surface-container-low border-b border-outline-variant py-3 px-4 font-body-md focus:border-primary transition-all resize-none" id="description" placeholder="Describe the architectural significance and key features..." rows="6"></textarea>
+</div>
+</div>
+</section>
+<!-- Assets: Video & Audio -->
+<section class="bg-white p-8 border border-outline-variant rounded-DEFAULT">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-6 border-b border-soft-gray pb-2">Cinematic Media</h3>
+<div class="space-y-8">
+<!-- Video Upload -->
+<div class="group border-2 border-dashed border-outline-variant p-10 flex flex-col items-center justify-center text-center cursor-pointer hover:border-primary hover:bg-surface-container-low transition-all duration-300" id="videoDropZone">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-4 group-hover:scale-110 transition-transform">movie</span>
+<h4 class="font-body-lg text-primary font-semibold mb-1">Upload Luxury Video</h4>
+<p class="text-on-surface-variant text-body-sm mb-6">Drag and drop 4K MP4 or MOV file (Max 500MB)</p>
+<button class="px-6 py-2 bg-charcoal text-ivory-white font-button text-button uppercase tracking-widest hover:bg-primary transition-colors" type="button">Select Video</button>
+<input accept="video/*" class="hidden" id="videoFile" type="file"/>
+</div>
+<!-- Video Progress (Hidden by default) -->
+<div class="hidden" id="videoProgress">
+<div class="flex justify-between mb-2">
+<span class="font-label-caps text-label-caps text-primary">VILLA_REEL_01.MP4</span>
+<span class="font-label-caps text-label-caps text-primary">65%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="bg-champagne-gold h-full w-[65%]"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Thumbnail & Actions -->
+<div class="lg:col-span-5 space-y-stack-md">
+<!-- Thumbnail Section -->
+<section class="bg-white p-8 border border-outline-variant rounded-DEFAULT">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-6 border-b border-soft-gray pb-2">Listing Hero Image</h3>
+<div class="relative group border-2 border-dashed border-outline-variant w-full aspect-[4/3] flex flex-col items-center justify-center overflow-hidden cursor-pointer hover:border-primary transition-all" id="thumbDropZone">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-0" data-alt="A hyper-realistic cinematic aerial photograph of a minimalist brutalist mansion in the Hollywood Hills at dusk, warm interior lights glowing through floor-to-ceiling windows, soft charcoal and ivory palette, architectural stillness." id="thumbPreview" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPNZr8a6Gcqd36e0d7qHvSSqce7NKml5R6v0Xj4n5UKuTR6puyA-3uUyQtBH4ifn0PdKcZB73wZBI_hUZUw4LOEFXMZ4aLKGcVYvkvdt26VmC_85CeI6iA1qP_0bdmcIUdw9uWgfRd0WWdKp4x_LjfFSNnq1pdC4jmdrDA1WULDb-FVN4GNTb9Tj1NNzYiGoizsI5urdu69cMzM17PuGFfKcgfwTjxzFNTggKMovZLG4ckm_tnJNCe')"></div>
+<div class="z-10 text-center p-6 group-hover:bg-white/90 transition-colors rounded-DEFAULT">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-3">add_a_photo</span>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant">Drop Hero Image</p>
+<p class="text-[10px] text-outline mt-2">Recommended: 1600x1200px JPG/WebP</p>
+</div>
+<input accept="image/*" class="hidden" id="thumbFile" type="file"/>
+</div>
+</section>
+<!-- Status & Integration Section -->
+<section class="bg-white p-8 border border-outline-variant rounded-DEFAULT">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-6 border-b border-soft-gray pb-2">Publishing</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-low">
+<div>
+<p class="font-label-caps text-label-caps text-primary font-bold">Visibility</p>
+<p class="text-[12px] text-on-surface-variant">Make this listing public</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="p-4 border border-outline-variant bg-surface-container-lowest flex items-start gap-3">
+<span class="material-symbols-outlined text-champagne-gold">database</span>
+<div>
+<p class="font-label-caps text-label-caps text-primary font-bold">Sync to Supabase</p>
+<p class="text-[12px] text-on-surface-variant">Live database integration active. Your assets will be stored in 'luxury-listings' bucket.</p>
+</div>
+</div>
+<button class="w-full mt-6 py-5 bg-champagne-gold text-white font-button text-button uppercase tracking-[0.2em] hover:bg-primary transition-all duration-500 shadow-xl shadow-champagne-gold/20 flex items-center justify-center gap-3 active:scale-95" type="submit">
+<span class="material-symbols-outlined">publish</span>
+                            Save Listing
+                        </button>
+<button class="w-full py-4 border border-outline-variant text-on-surface-variant font-button text-button uppercase tracking-widest hover:bg-surface-container-low transition-colors" type="button">
+                            Save as Draft
+                        </button>
+</div>
+</section>
+</div>
+</form>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-md px-margin-mobile md:px-margin-desktop flex flex-col items-center gap-unit text-center bg-surface-container-highest border-t border-outline-variant">
+<h3 class="font-display-lg text-headline-md text-primary tracking-tighter mb-4">ESTATE</h3>
+<div class="flex flex-wrap justify-center gap-6 mb-8">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<p class="font-body-sm text-body-sm tracking-wide text-on-surface-variant opacity-60 uppercase">© 2024 ESTATE LUXURY VIDEO LISTINGS. ALL RIGHTS RESERVED.</p>
+</footer>
+<script>
+        // Micro-interactions for Drag and Drop
+        const setupDropZone = (zoneId, inputId, previewId = null) => {
+            const zone = document.getElementById(zoneId);
+            const input = document.getElementById(inputId);
+            const preview = previewId ? document.getElementById(previewId) : null;
+
+            zone.addEventListener('click', () => input.click());
+
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.classList.add('drag-over');
+            });
+
+            ['dragleave', 'drop'].forEach(evt => {
+                zone.addEventListener(evt, () => zone.classList.remove('drag-over'));
+            });
+
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const files = e.dataTransfer.files;
+                if (files.length) handleFiles(files[0], preview);
+            });
+
+            input.addEventListener('change', (e) => {
+                if (e.target.files.length) handleFiles(e.target.files[0], preview);
+            });
+        };
+
+        const handleFiles = (file, preview) => {
+            console.log('Selected file:', file.name);
+            if (preview && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    preview.style.backgroundImage = `url('${e.target.result}')`;
+                    preview.classList.remove('opacity-0');
+                    preview.classList.add('opacity-100');
+                };
+                reader.readAsDataURL(file);
+            }
+            
+            // Show video progress simulation for video files
+            if (file.type.startsWith('video/')) {
+                const progress = document.getElementById('videoProgress');
+                progress.classList.remove('hidden');
+                // Simulate Supabase upload
+                console.log('Simulating Supabase storage upload...');
+            }
+        };
+
+        setupDropZone('videoDropZone', 'videoFile');
+        setupDropZone('thumbDropZone', 'thumbFile', 'thumbPreview');
+
+        // Form submission simulation
+        document.getElementById('propertyForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Processing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Success';
+                btn.classList.replace('bg-champagne-gold', 'bg-slate-navy');
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-slate-navy', 'bg-champagne-gold');
+                    btn.disabled = false;
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body></html>
