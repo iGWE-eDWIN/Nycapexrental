@@ -48,10 +48,10 @@ export default function AdminDashboardPage() {
   const unreadInquiries = inquiries.filter((i) => !i.read).length;
 
   return (
-    <div className="min-h-screen bg-surface flex">
+    <div className="min-h-screen bg-surface md:flex">
       <AdminSidebar />
 
-      <main className="flex-1 p-6 md:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 pt-16 md:pt-10 md:p-10 overflow-y-auto">
         {/* Top Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 pb-6 border-b border-outline-variant/40">
           <div>

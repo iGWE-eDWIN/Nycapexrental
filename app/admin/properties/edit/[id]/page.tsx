@@ -127,9 +127,9 @@ export default function EditPropertyPage() {
 
   if (loadingProperty) {
     return (
-      <div className="min-h-screen bg-surface flex">
+      <div className="min-h-screen bg-surface md:flex">
         <AdminSidebar />
-        <main className="flex-1 p-10 flex items-center justify-center">
+        <main className="flex-1 p-4 pt-16 md:pt-0 md:p-10 flex items-center justify-center">
           <div className="flex items-center gap-3 text-charcoal">
             <Loader2 className="w-6 h-6 animate-spin text-champagne-gold" />
             <span className="font-display font-bold uppercase tracking-wider text-xs">
@@ -142,10 +142,10 @@ export default function EditPropertyPage() {
   }
 
   return (
-    <div className="min-h-screen bg-surface flex">
+    <div className="min-h-screen bg-surface md:flex">
       <AdminSidebar />
 
-      <main className="flex-1 p-6 md:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 pt-16 md:pt-10 md:p-10 overflow-y-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8 pb-6 border-b border-outline-variant/40">
           <div>
