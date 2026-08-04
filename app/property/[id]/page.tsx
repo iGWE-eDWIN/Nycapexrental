@@ -184,8 +184,8 @@ export default function PropertyDetailPage() {
               </div>
               <div>
                 <div className="text-xs text-gray-500 font-medium">Listing Agent</div>
-                <a href="tel:+4803719809" className="font-display text-sm font-bold hover:underline">
-                  + (480) 371-9809
+                <a href="tel:+13323199071" className="font-display text-sm font-bold hover:underline">
+                  +1 (332) 319-9071
                 </a>
               </div>
             </div>

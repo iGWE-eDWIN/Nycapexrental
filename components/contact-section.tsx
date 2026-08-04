@@ -81,10 +81,10 @@ export default function ContactSection({ propertyId, propertyTitle }: ContactSec
                     Direct Line
                   </div>
                   <a
-                    href="tel:+4803719809"
+                    href="tel:+13323199071"
                     className="font-display text-lg text-charcoal font-bold hover:text-champagne-gold transition-colors"
                   >
-                    + (480) 371-9809
+                    +1 (332) 319-9071
                   </a>
                 </div>
               </div>

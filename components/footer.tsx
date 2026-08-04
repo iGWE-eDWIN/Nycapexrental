@@ -106,11 +106,11 @@ export default function Footer() {
           </h4>
           <div className="space-y-3 text-xs text-gray-300">
             <a
-              href="tel:+4803719809"
+              href="tel:+13323199071"
               className="flex items-center gap-2.5 hover:text-champagne-gold transition-colors"
             >
               <Phone className="w-4 h-4 text-champagne-gold" />
-              <span>+ (480) 371-9809</span>
+              <span>+1 (332) 319-9071</span>
             </a>
             <a
               href="mailto:Nycapexrental@gmail.com"

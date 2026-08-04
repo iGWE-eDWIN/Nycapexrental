@@ -156,7 +156,10 @@ export async function fetchProperties(filters?: PropertyFilterParams): Promise<P
       const { data, error } = await query;
       if (error) {
         console.warn('Supabase fetch query warning, using local cache fallback:', error.message);
-      } else if (data && data.length > 0) {
+      } else if (data) {
+        if (!filters || Object.keys(filters).length === 0) {
+          setLocalProperties(data as Property[]);
+        }
         return data as Property[];
       }
     } catch (err) {
@@ -207,7 +210,10 @@ export async function createProperty(property: Omit<Property, 'id' | 'created_at
     if (error) {
       throw new Error(`Failed to create property in Supabase: ${error.message}`);
     }
-    return data as Property;
+    const created = data as Property;
+    const current = getLocalProperties();
+    setLocalProperties([created, ...current.filter((p) => p.id !== created.id)]);
+    return created;
   }
 
   // Safe ID generator helper
@@ -234,7 +240,14 @@ export async function updateProperty(id: string, property: Partial<Property>): P
     if (error) {
       throw new Error(`Failed to update property in Supabase: ${error.message}`);
     }
-    return data as Property;
+    const updatedItem = data as Property;
+    const current = getLocalProperties();
+    const idx = current.findIndex((p) => p.id === id);
+    if (idx !== -1) {
+      current[idx] = updatedItem;
+      setLocalProperties(current);
+    }
+    return updatedItem;
   }
 
   const list = getLocalProperties();
@@ -252,6 +265,8 @@ export async function deleteProperty(id: string): Promise<void> {
     if (error) {
       throw new Error(`Failed to delete property in Supabase: ${error.message}`);
     }
+    const current = getLocalProperties();
+    setLocalProperties(current.filter((p) => p.id !== id));
     return;
   }
 

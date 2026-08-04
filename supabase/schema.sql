@@ -34,42 +34,18 @@ ALTER TABLE public.properties ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.inquiries ENABLE ROW LEVEL SECURITY;
 
 -- 4. RLS Policies for Properties Table
--- Allow anyone to view properties
-CREATE POLICY "Public Read Properties"
-    ON public.properties FOR SELECT
-    USING (true);
-
--- Allow authenticated admin users to insert/update/delete properties
-CREATE POLICY "Admin Insert Properties"
-    ON public.properties FOR INSERT
-    WITH CHECK (auth.role() = 'authenticated');
-
-CREATE POLICY "Admin Update Properties"
-    ON public.properties FOR UPDATE
-    USING (auth.role() = 'authenticated');
-
-CREATE POLICY "Admin Delete Properties"
-    ON public.properties FOR DELETE
-    USING (auth.role() = 'authenticated');
-
--- 5. RLS Policies for Inquiries Table
--- Allow public visitors to submit inquiries
-CREATE POLICY "Public Insert Inquiries"
-    ON public.inquiries FOR INSERT
+-- Allow full access to properties for the application
+CREATE POLICY "Public Full Access Properties"
+    ON public.properties FOR ALL
+    USING (true)
     WITH CHECK (true);
 
--- Allow authenticated admin to view/manage inquiries
-CREATE POLICY "Admin Select Inquiries"
-    ON public.inquiries FOR SELECT
-    USING (auth.role() = 'authenticated');
-
-CREATE POLICY "Admin Update Inquiries"
-    ON public.inquiries FOR UPDATE
-    USING (auth.role() = 'authenticated');
-
-CREATE POLICY "Admin Delete Inquiries"
-    ON public.inquiries FOR DELETE
-    USING (auth.role() = 'authenticated');
+-- 5. RLS Policies for Inquiries Table
+-- Allow full access to inquiries for the application
+CREATE POLICY "Public Full Access Inquiries"
+    ON public.inquiries FOR ALL
+    USING (true)
+    WITH CHECK (true);
 
 -- 6. Supabase Storage Bucket Setup for 'property-videos'
 INSERT INTO storage.buckets (id, name, public)
@@ -81,17 +57,17 @@ CREATE POLICY "Public Storage Read"
     ON storage.objects FOR SELECT
     USING (bucket_id = 'property-videos');
 
-CREATE POLICY "Admin Storage Insert"
+CREATE POLICY "Public Storage Insert"
     ON storage.objects FOR INSERT
-    WITH CHECK (bucket_id = 'property-videos' AND auth.role() = 'authenticated');
+    WITH CHECK (bucket_id = 'property-videos');
 
-CREATE POLICY "Admin Storage Update"
+CREATE POLICY "Public Storage Update"
     ON storage.objects FOR UPDATE
-    USING (bucket_id = 'property-videos' AND auth.role() = 'authenticated');
+    USING (bucket_id = 'property-videos');
 
-CREATE POLICY "Admin Storage Delete"
+CREATE POLICY "Public Storage Delete"
     ON storage.objects FOR DELETE
-    USING (bucket_id = 'property-videos' AND auth.role() = 'authenticated');
+    USING (bucket_id = 'property-videos');
 
 -- 7. Seed Initial Luxury NYC Properties
 INSERT INTO public.properties (id, title, price, bedrooms, bathrooms, description, video_url, thumbnail_url, status, featured)
