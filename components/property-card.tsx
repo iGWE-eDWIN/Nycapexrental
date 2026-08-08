@@ -27,7 +27,7 @@ export default function PropertyCard({ property, onPlayVideo }: PropertyCardProp
   return (
     <div className="group bg-ivory-white border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
       {/* Top Media Container */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100 cursor-pointer">
+      <div className="relative aspect-[4/3] w-full overflow-hidden cursor-pointer">
         <img
           src={property.thumbnail_url}
           alt={property.title}
@@ -35,7 +35,7 @@ export default function PropertyCard({ property, onPlayVideo }: PropertyCardProp
         />
 
         {/* Backdrop Overlay */}
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-transparent group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
           {/* Play Button */}
           {onPlayVideo && (
             <button
