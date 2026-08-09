@@ -109,14 +109,13 @@ export default function PropertyDetailPage() {
         </div>
 
         {/* Video Player Hero */}
-        <div className="relative aspect-video w-full bg-charcoal shadow-2xl overflow-hidden mb-8 border border-outline-variant/30">
+        <div className="relative w-full bg-black shadow-2xl overflow-hidden mb-8" style={{ height: 'clamp(260px, 56vw, 680px)' }}>
           {property.video_url ? (
             <video
               src={property.video_url}
-              poster={property.thumbnail_url}
               controls
               playsInline
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
             />
           ) : (
             <img

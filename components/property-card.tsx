@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import { Play, Bed, Bath, ArrowUpRight } from 'lucide-react';
 import { Property } from '@/lib/supabase';
@@ -11,6 +11,8 @@ interface PropertyCardProps {
 }
 
 export default function PropertyCard({ property, onPlayVideo }: PropertyCardProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const getStatusBadgeColor = (status: string) => {
     switch (status.toLowerCase()) {
       case 'available':
@@ -24,18 +26,48 @@ export default function PropertyCard({ property, onPlayVideo }: PropertyCardProp
     }
   };
 
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
   return (
     <div className="group bg-ivory-white border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
       {/* Top Media Container */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden cursor-pointer">
-        <img
-          src={property.thumbnail_url}
-          alt={property.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+      <div
+        className="relative aspect-[4/3] w-full overflow-hidden cursor-pointer"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {property.video_url ? (
+          /* Show actual video content — no poster, starts from first frame */
+          <video
+            ref={videoRef}
+            src={property.video_url}
+            muted
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          /* Fallback to thumbnail only if there's no video */
+          <img
+            src={property.thumbnail_url}
+            alt={property.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        )}
 
         {/* Backdrop Overlay */}
-        <div className="absolute inset-0 bg-transparent group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
           {/* Play Button */}
           {onPlayVideo && (
             <button
