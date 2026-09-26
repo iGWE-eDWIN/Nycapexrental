@@ -13,11 +13,11 @@ export default function Navbar() {
       <div className="bg-charcoal text-ivory-white text-xs px-4 md:px-12 py-2 flex flex-col sm:flex-row justify-between items-center gap-2">
         <div className="flex items-center gap-6">
           <a
-            href="tel:+13323199071"
+            href="tel:+15189474370"
             className="flex items-center gap-2 hover:text-champagne-gold transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-champagne-gold" />
-            <span>+1 (332) 319-9071</span>
+            <span>+1 (518) 947-4370</span>
           </a>
           <a
             href="mailto:Nycapexrental@gmail.com"
